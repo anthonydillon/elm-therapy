@@ -45,3 +45,10 @@ a:visited {
 .p-button--brand:hover {
   background-color: #77883c;
 }
+
+@media screen and (min-width: 768px) {
+  .u-position--bottom {
+    position: absolute; 
+    bottom: 20px;
+  }
+}
