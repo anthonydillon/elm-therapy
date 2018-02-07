@@ -52,3 +52,7 @@ a:visited {
     bottom: 20px;
   }
 }
+
+p {
+  max-width: none;
+}
