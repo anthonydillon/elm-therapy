@@ -44,10 +44,10 @@
             <a href="#main-content">Jump to main content</a>
           </span>
           <ul class="p-navigation__links" role="menu">
-            <li class="p-navigation__link" role="menuitem"><a href="#about">About us</a></li>
-            <li class="p-navigation__link" role="menuitem"><a href="#treatments">Treatments</a></li>
-            <li class="p-navigation__link" role="menuitem"><a href="#blog">Blog</a></li>
-            <li class="p-navigation__link" role="menuitem"><a href="#contact">Contact</a></li>
+            <li class="p-navigation__link" role="menuitem"><a href="/#about">About us</a></li>
+            <li class="p-navigation__link" role="menuitem"><a href="/#treatments">Treatments</a></li>
+            <li class="p-navigation__link" role="menuitem"><a href="/#blog">Blog</a></li>
+            <li class="p-navigation__link" role="menuitem"><a href="/#contact">Contact</a></li>
           </ul>
         </nav>
       </div>

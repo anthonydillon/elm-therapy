@@ -80,24 +80,38 @@ get_header(); ?>
     </div>
     <div class="row u-equal-height">
       <div class="p-card--highlighted col-3">
-        <h4>Full body relaxation massage</h4>
-        <p>60 minute</p>
+        <div class="p-card__header">
+          <h4>Full body relaxation massage</h4>
+          <p>60 minute</p>
+        </div>
         <p class="p-heading--four">£40</p>
+        <p class="u-align--center"><a href="#contact" class="p-button">Contact to book</a></p>
       </div>
       <div class="p-card--highlighted col-3">
-        <h4>Full body invigorating massage</h4>
-        <p>60 minute</p>
+        <div class="p-card__header">
+          <h4>Full body invigorating massage</h4>
+          <p>60 minute</p>
+        </div>
         <p class="p-heading--four">£40</p>
+        <p class="u-align--center"><a href="#contact" class="p-button">Contact to book</a></p>
       </div>
       <div class="p-card--highlighted col-3">
-        <h4>Head, neck, shoulder and back massage</h4> 
-        <p>30 minute</p>
+        <div class="p-card__header">
+          <h4>Head, neck, shoulder and back massage</h4>
+          <p>30 minute</p>
+        </div>
         <p class="p-heading--four">£25</p>
+        <p class="u-align--center"><a href="#contact" class="p-button">Contact to book</a></p>
       </div>
       <div class="p-card--highlighted col-3">
-        <h4>Hand and foot massage</h4> 
-        <p>30 minute</p>
-        <p class="p-heading--four u-position--bottom">£25</p>
+        <div class="p-card__header">
+          <h4>Hand and foot massage</h4>
+          <p>30 minute</p>
+        </div>
+        <div class="u-position--bottom">
+          <p class="p-heading--four">£25</p>
+          <p class="u-align--center"><a href="#contact" class="p-button">Contact to book</a></p>
+        </div>
       </div>
     </div>
   </div>
@@ -127,7 +141,7 @@ get_header(); ?>
                   $comma = '';
                   if ($posttags) {
                     foreach($posttags as $tag) {
-                      echo $comma . $tag->name; 
+                      echo $comma . $tag->name;
                       $comma = ', ';
                     }
                   }
@@ -166,4 +180,4 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
-    
+
