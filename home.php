@@ -31,13 +31,7 @@ get_header(); ?>
   <div class="p-strip--light is-bordered" id="about">
     <div class="row">
       <div class="col-8">
-  <h2>Samantha Collins ITEC Dip</h2>
-  <p>I became interested in massage and holistic therapies approximately five years ago when I met my mother-in-law, Zakia Collins.  Zakia ran the West London School of Therapeutic Massage for over 20 years and is a fountain of knowledge when it comes to complementary therapies.  Listening to Zakia’s clients tell their stories, and express how her treatments changed their lives made me look into alternative therapies and undertake my own studies.  In 2017 I studied with The Academy of Reflexology and Massage in Northampton and qualified with the following ITEC accreditations:</p>
-  <ul>
-    <li>Level 3 diploma in Holistic Massage</li>
-    <li>Level 3 diploma in Anatomy and Physiology and Practice Management Level 2 Emergency First Aid at Work</li>
-  </ul>
-  <p>I am also a full member of Complementary Therapists Association (CtHA) and regularly attend Continuing Professional Development (CPD) courses to widen and boost my skills.</p>
+        <?php $id=14; $post = get_page($id); echo wpautop($post->post_content);  ?>
       </div>
     </div>
     <div class="row">
