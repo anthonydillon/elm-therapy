@@ -83,8 +83,11 @@ get_header(); ?>
         foreach ( $posts_array as $post ) : setup_postdata( $post );
           $i++;
           ?>
+          <?php if( $i == 3 ) { ?>
+            </div><div class="row u-equal-height">
+          <?php } ?>
 
-          <div class="p-card--highlighted col-3 <?php if( $i == 4 ) { echo 'last-col'; } ?>">
+          <div class="p-card--highlighted col-6">
             <?php
               $duration = get_post_meta($post->ID, 'duration', true);
               $cost = get_post_meta($post->ID, 'cost', true);
@@ -93,7 +96,8 @@ get_header(); ?>
               <h4><?php the_title(); ?></h4>
               <p><?php echo $duration;	?></p>
             </div>
-            <p class="p-heading--four"><?php echo $cost;	?></p>
+            <p><?php the_content(); ?></p>
+            <p class="u-align--center p-heading--four"><?php echo $cost;	?></p>
             <p class="u-align--center"><a href="#contact" class="p-button">Contact to book</a></p>
           </div>
         <?php endforeach;
