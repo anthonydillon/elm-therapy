@@ -20,8 +20,7 @@ get_header(); ?>
   <div class="p-strip is-deep u-image-position is-bordered">
     <div class="row">
       <div class="col-6">
-        <h1>ELM Therapy; for a happier, healthier you.</h1>
-        <p>Massage benefits the whole body, both physiologically and psychologically.</p>
+        <?php $id=36; $post = get_page($id); echo wpautop($post->post_content);  ?>
       </div>
       <div class="col-6 u-hide--small">
         <img src="/wp-content/themes/elm-therapy/images/hero-image-2.jpg" alt="" class="u-image-position--bottom u-image-position--right" />
@@ -35,25 +34,11 @@ get_header(); ?>
       </div>
     </div>
     <div class="row">
-      <div class="col-6">
-        <h3>Physiological</h3>
-        <ul class="p-list--divided">
-          <li class="p-list__item is-ticked">Relieve tired, stiff joints</li>
-          <li class="p-list__item is-ticked">Promotes general relaxation</li>
-          <li class="p-list__item is-ticked">Improves skin tone</li>
-          <li class="p-list__item is-ticked">Encourage better circulation</li>
-          <li class="p-list__item is-ticked">Encourage sleep</li>
-        </ul>
+      <div class="col-6 ticked-list">
+        <?php $id=33; $post = get_page($id); echo wpautop($post->post_content);  ?>
       </div>
-      <div class="col-6">
-        <h3>Psychological</h3>
-        <ul class="p-list--divided">
-          <li class="p-list__item is-ticked">Reduce tension and stress</li>
-          <li class="p-list__item is-ticked">Relax the body and mind</li>
-          <li class="p-list__item is-ticked">Reduce anxiety</li>
-          <li class="p-list__item is-ticked">Increase energy</li>
-          <li class="p-list__item is-ticked">Increase energy levels</li>
-        </ul>
+      <div class="col-6 ticked-list">
+        <?php $id=34; $post = get_page($id); echo wpautop($post->post_content);  ?>
       </div>
     </div>
   </div>
@@ -79,39 +64,40 @@ get_header(); ?>
       </div>
     </div>
     <div class="row u-equal-height">
-      <div class="p-card--highlighted col-3">
-        <div class="p-card__header">
-          <h4>Full body relaxation massage</h4>
-          <p>60 minute</p>
-        </div>
-        <p class="p-heading--four">£40</p>
-        <p class="u-align--center"><a href="#contact" class="p-button">Contact to book</a></p>
-      </div>
-      <div class="p-card--highlighted col-3">
-        <div class="p-card__header">
-          <h4>Full body invigorating massage</h4>
-          <p>60 minute</p>
-        </div>
-        <p class="p-heading--four">£40</p>
-        <p class="u-align--center"><a href="#contact" class="p-button">Contact to book</a></p>
-      </div>
-      <div class="p-card--highlighted col-3">
-        <div class="p-card__header">
-          <h4>Head, neck, shoulder and back massage</h4>
-          <p>30 minute</p>
-        </div>
-        <p class="p-heading--four">£25</p>
-        <p class="u-align--center"><a href="#contact" class="p-button">Contact to book</a></p>
-      </div>
-      <div class="p-card--highlighted col-3">
-        <div class="p-card__header">
-          <h4>Hand and foot massage</h4>
-          <p>30 minute</p>
-        </div>
-        <div class="u-position--bottom">
-          <p class="p-heading--four">£25</p>
-          <p class="u-align--center"><a href="#contact" class="p-button">Contact to book</a></p>
-        </div>
+      <?php $args = array(
+          'posts_per_page'   => 4,
+          'offset'           => 0,
+          'category'         => '',
+          'category_name'    => '',
+          'order'            => 'DESC',
+          'include'          => '',
+          'exclude'          => '',
+          'meta_key'         => '',
+          'meta_value'       => '',
+          'post_type'        => 'treatments',
+          'post_status'      => 'publish',
+          'suppress_filters' => true
+        );
+        $posts_array = get_posts( $args );
+        $i = 0;
+        foreach ( $posts_array as $post ) : setup_postdata( $post );
+          $i++;
+          ?>
+
+          <div class="p-card--highlighted col-3 <?php if( $i == 4 ) { echo 'last-col'; } ?>">
+            <?php
+              $duration = get_post_meta($post->ID, 'duration', true);
+              $cost = get_post_meta($post->ID, 'cost', true);
+            ?>
+            <div class="p-card__header">
+              <h4><?php the_title(); ?></h4>
+              <p><?php echo $duration;	?></p>
+            </div>
+            <p class="p-heading--four"><?php echo $cost;	?></p>
+            <p class="u-align--center"><a href="#contact" class="p-button">Contact to book</a></p>
+          </div>
+        <?php endforeach;
+        wp_reset_postdata();?>
       </div>
     </div>
   </div>
@@ -166,14 +152,7 @@ get_header(); ?>
   <div class="p-strip" id="contact">
     <div class="row">
       <div class="col-8">
-        <h2>Contact</h2>
-        <p>Please contact me to book an appointment.</p>
-        <ul class="p-list--divided">
-          <li class="p-list__item">Samantha Collins</li>
-          <li class="p-list__item">Tel: <strong><a href="tel:07983549226">07983 549226</a></strong></li>
-          <li class="p-list__item">Email: <a href="mailto:elmtherapy@outlook.com">elmtherapy@outlook.com</a></li>
-          <li class="p-list__item">Facebook: <a href="https://www.facebook.com/ElmTherapy">ElmTherapy</a></li>
-        </ul>
+        <?php $id=39; $post = get_page($id); echo wpautop($post->post_content);  ?>
       </div>
     </div>
   </div>
