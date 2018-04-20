@@ -65,7 +65,7 @@ get_header(); ?>
     </div>
     <div class="row u-equal-height">
       <?php $args = array(
-          'posts_per_page'   => 4,
+          'posts_per_page'   => 10,
           'offset'           => 0,
           'category'         => '',
           'category_name'    => '',
@@ -81,14 +81,14 @@ get_header(); ?>
         $posts_array = get_posts( $args );
         $i = 0;
         foreach ( $posts_array as $post ) : setup_postdata( $post );
-          $i++;
           ?>
-          <?php if( $i == 3 ) { ?>
+          <?php if(($i % 2) == 0) { ?>
             </div><div class="row u-equal-height">
           <?php } ?>
 
           <div class="p-card--highlighted col-6">
             <?php
+              $i++;
               $duration = get_post_meta($post->ID, 'duration', true);
               $cost = get_post_meta($post->ID, 'cost', true);
             ?>
