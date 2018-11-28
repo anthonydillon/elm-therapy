@@ -111,10 +111,14 @@ get_header(); ?>
         <h2>Latest from the blog</h2>
       </div>
     </div>
-    <div class="row p-divider">
+    <div class="row p-divider">'
     <?php
-			if ( have_posts() ) :
+      if ( have_posts() ) :
+        $count = 0;
         while ( have_posts() ) : the_post();
+          if ($count % 3 == 0)  {
+            echo '</div><div class="row p-divider">';
+          }
         ?>
 
         <div class="p-media-object col-4 p-divider__block">
@@ -144,6 +148,7 @@ get_header(); ?>
           </div>
         </div>
     <?php
+          $count++;
 				endwhile;
 			endif;
     ?>
